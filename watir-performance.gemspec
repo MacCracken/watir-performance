@@ -27,10 +27,10 @@ Gem::Specification.new do |s|
     "examples/basic.rb",
     "lib/idl_extractor.rb",
     "lib/performance.rb",
-    "lib/watir-webdriver-performance.rb",
+    "lib/watir-performance.rb",
     "spec/spec_helper.rb",
-    "spec/watir-webdriver-performance-non-supported-browser_spec.rb",
-    "spec/watir-webdriver-performance_spec.rb",
+    "spec/watir-performance-non-supported-browser_spec.rb",
+    "spec/watir-performance_spec.rb",
     "watir-performance.gemspec"
   ]
   s.homepage = "http://github.com/MacCracken/watir-performance"
@@ -39,14 +39,14 @@ Gem::Specification.new do |s|
 
   s.summary = "A simple helper gem for watir-webdriver performance metrics"
 
-  s.add_runtime_dependency(%q<watir>, [">= 0"])
-  s.add_development_dependency(%q<rspec>, [">= 0"])
-  s.add_development_dependency(%q<bundler>, [">= 0"])
-  s.add_development_dependency(%q<jeweler>, [">= 0"])
-  s.add_development_dependency(%q<zomg>, [">= 0"])
-  s.add_development_dependency(%q<rdoc>, [">= 0"])
-  s.add_development_dependency(%q<nokogiri>, [">= 0"])
-  s.add_development_dependency(%q<active_support>, [">= 0"])
+  s.add_runtime_dependency(%q<watir>, ["~> 6.0"])
+  s.add_development_dependency(%q<rspec>, ["~> 3.5"])
+  s.add_development_dependency(%q<bundler>, ["~> 1.13"])
+  s.add_development_dependency(%q<jeweler>, ["~> 2.1"])
+  s.add_development_dependency(%q<zomg>, ["~> 1.0"])
+  s.add_development_dependency(%q<rdoc>, ["~> 5.0"])
+  s.add_development_dependency(%q<nokogiri>, ["~> 1.6"])
+  s.add_development_dependency(%q<activesupport>, ["~> 5.0"])
    
 end
 

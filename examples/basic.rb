@@ -1,5 +1,5 @@
-require 'watir-webdriver-performance'
-require 'watir-webdriver'
+require 'watir-performance'
+require 'watir'
 b = Watir::Browser.new :chrome
 b.goto "altentee.com"
 p b.performance

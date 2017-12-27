@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    watir-performance (0.3.0)
-      watir (~> 6.0)
+    watir-performance (0.3.2)
+      watir (~> 6.10)
 
 GEM
   remote: https://rubygems.org/

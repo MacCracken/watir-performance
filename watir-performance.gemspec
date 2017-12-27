@@ -39,13 +39,13 @@ Gem::Specification.new do |s|
 
   s.summary = "A simple helper gem for watir-webdriver performance metrics"
 
-  s.add_runtime_dependency(%q<watir>, ["~> 6.1"])
-  s.add_development_dependency(%q<rspec>, ["~> 3.5"])
+  s.add_runtime_dependency(%q<watir>, ["~> 6.10"])
+  s.add_development_dependency(%q<rspec>, ["~> 3.7"])
   s.add_development_dependency(%q<bundler>, ["~> 1.16"])
   s.add_development_dependency(%q<jeweler>, ["~> 2.1"])
   s.add_development_dependency(%q<zomg>, ["~> 1.0"])
-  s.add_development_dependency(%q<rdoc>, ["~> 5.0"])
-  s.add_development_dependency(%q<nokogiri>, ["~> 1.7"])
+  s.add_development_dependency(%q<rdoc>, ["~> 6.0"])
+  s.add_development_dependency(%q<nokogiri>, ["~> 1.8"])
   s.add_development_dependency(%q<activesupport>, ["~> 5.0"])
    
 end

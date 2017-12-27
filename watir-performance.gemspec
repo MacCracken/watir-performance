@@ -41,7 +41,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency(%q<watir>, ["~> 6.1"])
   s.add_development_dependency(%q<rspec>, ["~> 3.5"])
-  s.add_development_dependency(%q<bundler>, ["~> 1.13"])
+  s.add_development_dependency(%q<bundler>, ["~> 1.16"])
   s.add_development_dependency(%q<jeweler>, ["~> 2.1"])
   s.add_development_dependency(%q<zomg>, ["~> 1.0"])
   s.add_development_dependency(%q<rdoc>, ["~> 5.0"])

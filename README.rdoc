@@ -74,9 +74,7 @@ web performance specification.
 
 == Copyright
 
-Copyright (c) 2011 Tim Koopmans. 
-
-Copyright (c) 2017 Robert MacCracken. 
+Copyright (c) 2011 Tim Koopmans, 2017 Robert MacCracken. 
 
 See LICENSE.txt for further details.
 

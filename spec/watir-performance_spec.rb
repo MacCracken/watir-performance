@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-describe "WatirWebdriverPerformance" do
+describe "WatirPerformance" do
 
   let!(:b) { @b }
 

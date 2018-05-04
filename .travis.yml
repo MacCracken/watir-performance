@@ -31,8 +31,8 @@ matrix:
     addons:
       chrome: beta
     before_install:
+    - bash ./scripts/setup-chromedriver.sh
     - gem install bundler -v 1.16.1
-    - brew cask install chromedriver
     - sudo safaridriver --enable
 
   - os: osx
@@ -40,8 +40,8 @@ matrix:
     addons:
       chrome: beta
     before_install:
+    - bash ./scripts/setup-chromedriver.sh
     - gem install bundler -v 1.16.1
-    - brew cask install chromedriver
     - sudo safaridriver --enable
     
 notifications: 

@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
-  s.authors = ["Tim Koopmans".freeze]
+  s.authors = ["Robert MacCracken".freeze, "Tim Koopmans".freeze]
   s.date = "2018-05-04"
   s.description = "This gem collects and summarises metrics speficied in the W3C Navigation web performance specifications at http://w3c-test.org/webperf/specs/NavigationTiming/ when using watir-webdriver and a compatible browser".freeze
-  s.email = "tim.koops@gmail.com".freeze
+  s.email = ["robert.maccracken@gmail.com".freeze, "tim.koops@gmail.com".freeze]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -45,27 +45,30 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<watir-performance>.freeze, [">= 0"])
       s.add_runtime_dependency(%q<watir>.freeze, [">= 0"])
-      s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
-      s.add_development_dependency(%q<zomg>.freeze, [">= 0"])
-      s.add_development_dependency(%q<nokogiri>.freeze, [">= 0"])
-      s.add_development_dependency(%q<active_support>.freeze, [">= 0"])
+      s.add_development_dependency(%q<rdoc>.freeze, ["~> 6.0"])
+      s.add_development_dependency(%q<bundler>.freeze, ["~> 1.0"])
+      s.add_development_dependency(%q<jeweler>.freeze, ["~> 2.3"])
+      s.add_development_dependency(%q<rspec>.freeze, ["~> 3.7"])
+      s.add_development_dependency(%q<nokogiri>.freeze, ["~> 1.8"])
+      s.add_development_dependency(%q<activesupport>.freeze, ["~> 5.2"])
     else
-      s.add_dependency(%q<watir-performance>.freeze, [">= 0"])
       s.add_dependency(%q<watir>.freeze, [">= 0"])
-      s.add_dependency(%q<rspec>.freeze, [">= 0"])
-      s.add_dependency(%q<zomg>.freeze, [">= 0"])
-      s.add_dependency(%q<nokogiri>.freeze, [">= 0"])
-      s.add_dependency(%q<active_support>.freeze, [">= 0"])
+      s.add_dependency(%q<rdoc>.freeze, ["~> 6.0"])
+      s.add_dependency(%q<bundler>.freeze, ["~> 1.0"])
+      s.add_dependency(%q<jeweler>.freeze, ["~> 2.3"])
+      s.add_dependency(%q<rspec>.freeze, ["~> 3.7"])
+      s.add_dependency(%q<nokogiri>.freeze, ["~> 1.8"])
+      s.add_dependency(%q<activesupport>.freeze, ["~> 5.2"])
     end
   else
-    s.add_dependency(%q<watir-performance>.freeze, [">= 0"])
     s.add_dependency(%q<watir>.freeze, [">= 0"])
-    s.add_dependency(%q<rspec>.freeze, [">= 0"])
-    s.add_dependency(%q<zomg>.freeze, [">= 0"])
-    s.add_dependency(%q<nokogiri>.freeze, [">= 0"])
-    s.add_dependency(%q<active_support>.freeze, [">= 0"])
+    s.add_dependency(%q<rdoc>.freeze, ["~> 6.0"])
+    s.add_dependency(%q<bundler>.freeze, ["~> 1.0"])
+    s.add_dependency(%q<jeweler>.freeze, ["~> 2.3"])
+    s.add_dependency(%q<rspec>.freeze, ["~> 3.7"])
+    s.add_dependency(%q<nokogiri>.freeze, ["~> 1.8"])
+    s.add_dependency(%q<activesupport>.freeze, ["~> 5.2"])
   end
 end
 

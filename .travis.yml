@@ -1,12 +1,12 @@
 sudo: required
 language: ruby
-rvm:
-  - 2.5.1
-  - 2.5.0
 
 matrix:
   include:
   - os: linux
+    rvm:
+    - 2.5.1
+    - 2.5.0
     addons:
       chrome: stable
     before_install:
@@ -15,6 +15,9 @@ matrix:
     - sleep 3 # give xvfb some time to start
     - gem install bundler -v 1.16.1
   - os: osx
+    rvm:
+    - 2.5.1
+    - 2.5.0
     addons:
       chrome: beta
     before_install:

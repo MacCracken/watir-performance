@@ -1,7 +1,7 @@
 = watir-performance
 Predecessor to https://github.com/90kts/watir-webdriver-performance for Watir as opposed to watir-webdriver
 
-The Watir-Performance aims to provide a set of navigation timing metrics for Watir actions using a [W3C page performance standard](http://w3c-test.org/webperf/specs/NavigationTiming/). This is a perfect solution to capture response time metrics, and it’s very straightforward to do.  Works for Chrome, Firefox, Edge and IE9 and up. Currently no Safari support.
+The Watir-Performance aims to provide a set of navigation timing metrics for Watir actions using a W3C page performance standard[http://w3c-test.org/webperf/specs/NavigationTiming/]. This is a perfect solution to capture response time metrics, and it’s very straightforward to do.  Works for Chrome, Firefox, Edge and IE9 and up. Currently no Safari support.
 
 This gem collects and summarises metrics speficied in the W3C Navigation
 web performance specifications at

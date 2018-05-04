@@ -5,7 +5,7 @@ describe "WatirPerformance-NonSupportedBrowser" do
   let!(:b) { @b }
 
   before(:all) do
-    @b ||= Watir::Browser.new :safari
+    @b ||= Watir::Browser.new :safari, technology_preview: true
   end
 
   after(:all) do

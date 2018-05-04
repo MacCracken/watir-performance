@@ -8,6 +8,7 @@ matrix:
     rvm: 2.5.1
     addons:
       chrome: stable
+      firefox: stable
     before_install:
     - bash ./scripts/setup-chromedriver.sh
     - gem install bundler -v 1.16.1
@@ -19,6 +20,7 @@ matrix:
     rvm: 2.5.0
     addons:
       chrome: stable
+      firefox: stable
     before_install:
     - bash ./scripts/setup-chromedriver.sh
     - gem install bundler -v 1.16.1
@@ -30,6 +32,7 @@ matrix:
     rvm: 2.5.1
     addons:
       chrome: beta
+      firefox: stable
     before_install:
     - bash ./scripts/setup-chromedriver.sh
     - gem install bundler -v 1.16.1
@@ -39,6 +42,7 @@ matrix:
     rvm: 2.5.0
     addons:
       chrome: beta
+      firefox: stable
     before_install:
     - bash ./scripts/setup-chromedriver.sh
     - gem install bundler -v 1.16.1

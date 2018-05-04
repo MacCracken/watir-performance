@@ -4,8 +4,6 @@ rvm:
   - 2.5.1
   - 2.5.0
 
-script: echo "Running tests against $(ruby -v) ..."
-
 matrix:
   include:
   - os: linux

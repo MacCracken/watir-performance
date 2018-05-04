@@ -4,5 +4,6 @@ GK_VERSION=$(if [ ${GECKODRIVER_VERSION:-latest} = "latest" ]; then echo $(wget 
 echo "Using GeckoDriver version: "$GK_VERSION 
 wget --no-verbose -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v$GK_VERSION/geckodriver-v$GK_VERSION-linux64.tar.gz
 sudo tar -C /usr/local -zxf /tmp/geckodriver.tar.gz 
+rm /tmp/geckodriver.tar.gz 
 sudo mv /usr/local/geckodriver /usr/local/geckodriver-$GK_VERSION 
-sudo chmod 755 /usr/local/geckodriver-$GK_VERSION 
+sudo chmod 755 /usr/local/geckodriver-$GK_VERSION

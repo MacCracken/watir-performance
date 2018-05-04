@@ -3,8 +3,7 @@ language: ruby
 rvm:
   - 2.5.1
 before_install:
-  - sudo bash ./scripts/install-chromedriver.sh
-  - sudo apt-get update -y && sudo apt-get install chromium-browser
+  - sudo bash ./scripts/setup-chrome.sh
   - gem install bundler -v 1.16.1
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"

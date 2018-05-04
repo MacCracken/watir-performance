@@ -9,39 +9,39 @@ matrix:
     addons:
       chrome: stable
     before_install:
+    - gem install bundler -v 1.16.1
     - "export DISPLAY=:99.0"
     - "sh -e /etc/init.d/xvfb start"
     - sleep 3 # give xvfb some time to start
-    - gem install bundler -v 1.16.1
     
   - os: linux
     rvm: 2.5.0
     addons:
       chrome: stable
     before_install:
+    - gem install bundler -v 1.16.1
     - "export DISPLAY=:99.0"
     - "sh -e /etc/init.d/xvfb start"
     - sleep 3 # give xvfb some time to start
-    - gem install bundler -v 1.16.1
     
   - os: osx
     rvm: 2.5.1
     addons:
       chrome: beta
     before_install:
+    - gem install bundler -v 1.16.1
     - "export DISPLAY=:99.0"
     - "sh -e /etc/init.d/xvfb start"
     - sleep 3 # give xvfb some time to start
     - sudo safaridriver --enable
-    - gem install bundler -v 1.16.1
 
   - os: osx
     rvm: 2.5.0
     addons:
       chrome: beta
     before_install:
+    - gem install bundler -v 1.16.1
     - "export DISPLAY=:99.0"
     - "sh -e /etc/init.d/xvfb start"
     - sleep 3 # give xvfb some time to start
     - sudo safaridriver --enable
-    - gem install bundler -v 1.16.1

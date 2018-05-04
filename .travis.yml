@@ -21,7 +21,7 @@ matrix:
     rvm: 2.5.0
     addons:
       chrome: stable
-      firefox: "59.0.2"
+      firefox: "59.0"
     before_install:
     - bash ./scripts/setup-chromedriver.sh
     - bash ./scripts/setup-geckodriver.sh
@@ -45,7 +45,7 @@ matrix:
     rvm: 2.5.0
     addons:
       chrome: beta
-      firefox: "59.0.2"
+      firefox: "59.0"
     before_install:
     - bash ./scripts/setup-chromedriver.sh
     - bash ./scripts/setup-geckodriver.sh

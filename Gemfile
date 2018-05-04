@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'watir'
+gem 'watir', "~> 6.10"
 
 group :development do
   gem "rdoc", "~> 6.0"

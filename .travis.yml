@@ -6,17 +6,19 @@ rvm:
 
 script: echo "Running tests against $(ruby -v) ..."
 
-os: linux
-  addons:
-    chrome: stable
-  before_install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222
-  - gem install bundler -v 1.16.1
-  # OSX
-os: osx
-  addons:
-    chrome: beta
-  before_install:
-  - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 &"
-  - sudo safaridriver --enable
-  - gem install bundler -v 1.16.1
+matrix:
+  include:
+  - os: linux
+    addons:
+      chrome: stable
+    before_install:
+    - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222
+    - gem install bundler -v 1.16.1
+    # OSX
+  - os: osx
+    addons:
+      chrome: beta
+    before_install:
+    - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 &"
+    - sudo safaridriver --enable
+    - gem install bundler -v 1.16.1

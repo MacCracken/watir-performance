@@ -44,4 +44,5 @@ matrix:
     - brew cask install chromedriver
     - sudo safaridriver --enable
     
-notifications: false
+notifications: 
+  email: false

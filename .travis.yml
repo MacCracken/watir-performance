@@ -3,5 +3,5 @@ language: ruby
 rvm:
   - 2.5.1
 before_install:
-  - ./scripts/install-chromedriver.sh
+  - sudo bash ./scripts/install-chromedriver.sh
   - gem install bundler -v 1.16.1

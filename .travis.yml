@@ -1,10 +1,48 @@
 sudo: required
 language: ruby
-rvm:
-  - 2.5.1
-before_install:
-  - sudo bash ./scripts/setup-chrome.sh
-  - gem install bundler -v 1.16.1
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+
+matrix:
+  include:
+  
+  - os: linux
+    rvm: 2.5.1
+    addons:
+      chrome: stable
+    before_install:
+    - bash ./scripts/setup-chromedriver.sh
+    - gem install bundler -v 1.16.1
+    - "export DISPLAY=:99.0"
+    - "sh -e /etc/init.d/xvfb start"
+    - sleep 3 # give xvfb some time to start
+    
+  - os: linux
+    rvm: 2.5.0
+    addons:
+      chrome: stable
+    before_install:
+    - bash ./scripts/setup-chromedriver.sh
+    - gem install bundler -v 1.16.1
+    - "export DISPLAY=:99.0"
+    - "sh -e /etc/init.d/xvfb start"
+    - sleep 3 # give xvfb some time to start
+    
+  - os: osx
+    rvm: 2.5.1
+    addons:
+      chrome: beta
+    before_install:
+    - bash ./scripts/setup-chromedriver.sh
+    - gem install bundler -v 1.16.1
+    - sudo safaridriver --enable
+
+  - os: osx
+    rvm: 2.5.0
+    addons:
+      chrome: beta
+    before_install:
+    - bash ./scripts/setup-chromedriver.sh
+    - gem install bundler -v 1.16.1
+    - sudo safaridriver --enable
+    
+notifications: 
+  email: false

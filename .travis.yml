@@ -1,21 +1,30 @@
-os:
-  - linux
-  - osx
-
-addons:
-  chrome: stable
-  safari: stable
-  
 sudo: required
 language: ruby
 rvm:
   - 2.5.1
-  
-before_install:
-  - sudo safaridriver --enable
-  - sudo chromedriver --enable
+  - 2.5.0
+
+script: echo "Running tests against $(ruby -v) ..."
+
+os:
+  - linux
+  addons:
+    chrome: stable
+  before_install:
+    - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222
+    - gem install bundler -v 1.16.1
+  # OSX
+  - osx
+  addons:
+    chrome: beta
+  before_install:
+    - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 &"
+    - sudo safaridriver --enable
+    - gem install bundler -v 1.16.1
+
+  # - sudo safaridriver --enable
   # - sudo bash ./scripts/setup-chrome.sh remove
-  - gem install bundler -v 1.16.1
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+  #- gem install bundler -v 1.16.1
+  #- "export DISPLAY=:99.0"
+  #- "sh -e /etc/init.d/xvfb start"
+  #- sleep 3 # give xvfb some time to start

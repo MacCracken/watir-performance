@@ -9,6 +9,7 @@ matrix:
     addons:
       chrome: stable
     before_install:
+    - bash ./scripts/setup-chromedriver.sh
     - gem install bundler -v 1.16.1
     - "export DISPLAY=:99.0"
     - "sh -e /etc/init.d/xvfb start"
@@ -19,6 +20,7 @@ matrix:
     addons:
       chrome: stable
     before_install:
+    - bash ./scripts/setup-chromedriver.sh
     - gem install bundler -v 1.16.1
     - "export DISPLAY=:99.0"
     - "sh -e /etc/init.d/xvfb start"

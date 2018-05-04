@@ -5,11 +5,11 @@ describe "WatirPerformance-NonSupportedBrowser" do
   let!(:b) { @b }
 
   before(:all) do
-    @b ||= Watir::Browser.new :safari, technology_preview: true
+    @b ||= Watir::Browser.new :safari
   end
 
   after(:all) do
-    @b.close
+    @b.quit
   end
 
   pending "should raise an error when a non supported browser is encountered" do

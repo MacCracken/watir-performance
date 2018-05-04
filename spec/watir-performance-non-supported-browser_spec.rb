@@ -1,29 +1,29 @@
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+uname=`uname -s`.chomp
+if uname == "Darwin"
+  describe 'WatirPerformance-NonSupportedBrowser' do
+    let!(:b) { @b }
 
-describe "WatirPerformance-NonSupportedBrowser" do
+    before(:all) do
+      @b ||= Watir::Browser.new :safari
+    end
 
-  let!(:b) { @b }
+    after(:all) do
+      @b.quit
+    end
 
-  before(:all) do
-    @b ||= Watir::Browser.new :safari
-  end
+    pending 'should raise an error when a non supported browser is encountered' do
+      b.goto "google.com"
+      expect(-> { b.performance }).to raise_error RuntimeError, 'Could not collect performance metrics from your current browser. Please ensure the browser you are using supports collecting performance metrics.'
+    end
 
-  after(:all) do
-    @b.quit
-  end
+    pending "should return false for supported" do
+      b.goto "google.com"
+      expect(b).not_to be_performance_supported
+    end
 
-  pending "should raise an error when a non supported browser is encountered" do
-    b.goto "google.com"
-    expect(lambda { b.performance }).to raise_error RuntimeError, 'Could not collect performance metrics from your current browser. Please ensure the browser you are using supports collecting performance metrics.'
-  end
-
-  pending "should return false for supported" do
-    b.goto "google.com"
-    expect(b).not_to be_performance_supported
-  end
-
-  pending "should not support performance as block" do
-    b.goto "google.com"
-    b.with_performance {|performance| expect(performance).not_to be_nil }
+    pending "should not support performance as block" do
+      b.goto "google.com"
+      b.with_performance {|performance| expect(performance).not_to be_nil }
+    end
   end
 end

@@ -37,7 +37,7 @@ matrix:
       firefox: "59.0.2"
     before_install:
     - sudo bash ./scripts/setup-chromedriver.sh
-    - sudo bash ./scripts/setup-geckodriver.sh
+    - sudo bash ./scripts/setup-geckodriver_mac.sh
     - gem install bundler -v 1.16.1
     - sudo safaridriver --enable
 
@@ -48,7 +48,7 @@ matrix:
       firefox: "59.0"
     before_install:
     - sudo bash ./scripts/setup-chromedriver.sh
-    - sudo bash ./scripts/setup-geckodriver.sh
+    - sudo geckodriver --enable
     - gem install bundler -v 1.16.1
     - sudo safaridriver --enable
     

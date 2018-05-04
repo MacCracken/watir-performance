@@ -6,3 +6,6 @@ before_install:
   - sudo bash ./scripts/install-chromedriver.sh
   - sudo apt-get update -y && sudo apt-get install chromium-browser
   - gem install bundler -v 1.16.1
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start

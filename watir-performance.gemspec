@@ -46,13 +46,6 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<watir-performance>.freeze, [">= 0"])
-      s.add_development_dependency(%q<rspec>.freeze, ["~> 3.7"])
-      s.add_development_dependency(%q<bundler>.freeze, ["~> 1.16"])
-      s.add_development_dependency(%q<jeweler>.freeze, ["~> 2.1"])
-      s.add_development_dependency(%q<zomg>.freeze, ["~> 1.0"])
-      s.add_development_dependency(%q<rdoc>.freeze, ["~> 6.0"])
-      s.add_development_dependency(%q<nokogiri>.freeze, ["~> 1.8"])
-      s.add_development_dependency(%q<activesupport>.freeze, ["~> 5.0"])
       s.add_runtime_dependency(%q<watir>.freeze, [">= 0"])
       s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
       s.add_development_dependency(%q<zomg>.freeze, [">= 0"])
@@ -60,13 +53,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<active_support>.freeze, [">= 0"])
     else
       s.add_dependency(%q<watir-performance>.freeze, [">= 0"])
-      s.add_dependency(%q<rspec>.freeze, ["~> 3.7"])
-      s.add_dependency(%q<bundler>.freeze, ["~> 1.16"])
-      s.add_dependency(%q<jeweler>.freeze, ["~> 2.1"])
-      s.add_dependency(%q<zomg>.freeze, ["~> 1.0"])
-      s.add_dependency(%q<rdoc>.freeze, ["~> 6.0"])
-      s.add_dependency(%q<nokogiri>.freeze, ["~> 1.8"])
-      s.add_dependency(%q<activesupport>.freeze, ["~> 5.0"])
       s.add_dependency(%q<watir>.freeze, [">= 0"])
       s.add_dependency(%q<rspec>.freeze, [">= 0"])
       s.add_dependency(%q<zomg>.freeze, [">= 0"])
@@ -75,13 +61,6 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<watir-performance>.freeze, [">= 0"])
-    s.add_dependency(%q<rspec>.freeze, ["~> 3.7"])
-    s.add_dependency(%q<bundler>.freeze, ["~> 1.16"])
-    s.add_dependency(%q<jeweler>.freeze, ["~> 2.1"])
-    s.add_dependency(%q<zomg>.freeze, ["~> 1.0"])
-    s.add_dependency(%q<rdoc>.freeze, ["~> 6.0"])
-    s.add_dependency(%q<nokogiri>.freeze, ["~> 1.8"])
-    s.add_dependency(%q<activesupport>.freeze, ["~> 5.0"])
     s.add_dependency(%q<watir>.freeze, [">= 0"])
     s.add_dependency(%q<rspec>.freeze, [">= 0"])
     s.add_dependency(%q<zomg>.freeze, [">= 0"])

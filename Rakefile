@@ -16,13 +16,8 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{A simple helper gem for watir performance metrics}
   gem.description = %Q{This gem collects and summarises metrics speficied in the W3C Navigation web performance specifications at http://w3c-test.org/webperf/specs/NavigationTiming/ when using watir-webdriver and a compatible browser}
-  gem.email = "tim.koops@gmail.com"
-  gem.authors = ["Tim Koopmans"]
-  gem.add_runtime_dependency 'watir'
-  gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'zomg'
-  gem.add_development_dependency 'nokogiri'
-  gem.add_development_dependency 'active_support'
+  gem.email = ['robert.maccracken@gmail.com', "tim.koops@gmail.com"]
+  gem.authors = ['Robert MacCracken', "Tim Koopmans"]
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -37,7 +32,7 @@ RSpec::Core::RakeTask.new(:rcov) do |spec|
   spec.rcov = true
 end
 
-task :default => :spec
+task default: :spec
 
 require 'rdoc/task'
 RDoc::Task.new do |rdoc|

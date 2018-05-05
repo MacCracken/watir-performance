@@ -26,7 +26,7 @@ module Watir
       @hash
     end
 
-    def summarized_hash(hash_response)
+    def summarized_hash(hash)
       hash[:summary] = {}
       hash[:summary][:redirect] = hash[:timing][:redirect_end] -
         hash[:timing][:redirect_start] if hash[:timing][:redirect_end] > 0
@@ -65,7 +65,7 @@ module Watir
       word.downcase!
       word
     end
-    
+
     def earliest_timestamp(hash)
       return hash[:timing][:navigation_start] if hash[:timing][:navigation_start] > 0
       return hash[:timing][:redirect_start] if hash[:timing][:redirect_start] > 0

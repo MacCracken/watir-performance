@@ -13,9 +13,7 @@ matrix:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
     - gem install bundler -v 1.16.1
-    - "export DISPLAY=:99.0"
-    - "sh -e /etc/init.d/xvfb start"
-    - sleep 3
+    script: xvfb-run bundle exec rake
     
   - os: linux
     rvm: 2.5.0
@@ -26,9 +24,7 @@ matrix:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
     - gem install bundler -v 1.16.1
-    - "export DISPLAY=:99.0"
-    - "sh -e /etc/init.d/xvfb start"
-    - sleep 3
+    script: xvfb-run bundle exec rake
     
   - os: osx
     rvm: 2.5.1
@@ -40,9 +36,7 @@ matrix:
     - sudo bash ./spec/support/setup-geckodriver-alt.sh
     - sudo safaridriver --enable
     - gem install bundler -v 1.16.1
-    - "export DISPLAY=:99.0"
-    - "sh -e /etc/init.d/xvfb start"
-    - sleep 3
+    script: xvfb-run bundle exec rake
 
   - os: osx
     rvm: 2.5.0
@@ -54,9 +48,7 @@ matrix:
     - sudo bash ./spec/support/setup-geckodriver-alt.sh
     - sudo safaridriver --enable
     - gem install bundler -v 1.16.1
-    - "export DISPLAY=:99.0"
-    - "sh -e /etc/init.d/xvfb start"
-    - sleep 3
+    script: xvfb-run bundle exec rake
     
 notifications: 
   email: false

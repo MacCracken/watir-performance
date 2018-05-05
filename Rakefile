@@ -3,8 +3,8 @@ require 'bundler'
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
+  warn e.message
+  warn "Run `bundle install` to install missing gems"
   exit e.status_code
 end
 require 'rake'
@@ -18,6 +18,8 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{This gem collects and summarises metrics speficied in the W3C Navigation web performance specifications at http://w3c-test.org/webperf/specs/NavigationTiming/ when using watir-webdriver and a compatible browser}
   gem.email = ['robert.maccracken@gmail.com', "tim.koops@gmail.com"]
   gem.authors = ['Robert MacCracken', "Tim Koopmans"]
+  gem.required_rubygems_version = '~> 2.7'
+  gem.required_ruby_version = '~> 2.5'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

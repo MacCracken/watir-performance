@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name = "watir-performance".freeze
   s.version = "0.5.1"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new("~> 2.7".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Robert MacCracken".freeze, "Tim Koopmans".freeze]
   s.date = "2018-05-05"
@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/MacCracken/watir-performance".freeze
   s.licenses = ["MIT".freeze]
+  s.required_ruby_version = Gem::Requirement.new("~> 2.5".freeze)
   s.rubygems_version = "2.7.6".freeze
   s.summary = "A simple helper gem for watir performance metrics".freeze
 

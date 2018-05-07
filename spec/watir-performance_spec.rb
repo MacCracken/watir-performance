@@ -9,7 +9,17 @@ browsers.each do |browser|
     let!(:b) { @b }
 
     before(:all) do
-      @b ||= Watir::Browser.new browser
+      options = case browser
+                when :chrome
+                  Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox
+                                                                    headless
+                                                                    disable-gpu])
+                when :firefox
+                  Selenium::WebDriver::Firefox::Options.new(args: %w[no-sandbox
+                                                                     headless
+                                                                     disable-gpu])
+                end
+      @b ||= Watir::Browser.new(browser, options: options)
     end
 
     after(:all) do

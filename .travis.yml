@@ -3,7 +3,7 @@ language: ruby
 
 matrix:
   include:
-  
+        
   - os: osx
     rvm: 2.5.1
     addons:
@@ -11,9 +11,6 @@ matrix:
       firefox: "59.0.2"
     before_install:
     - sudo safaridriver --enable
-    - brew update
-    - brew install chromedriver
-    - brew install geckodriver
     - gem install bundler -v 1.16.1
 
   #- os: osx

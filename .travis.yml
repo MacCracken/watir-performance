@@ -5,7 +5,11 @@ matrix:
   include:
 
   - os: linux
-    rvm: 2.6.0-preview1
+    rvm: 
+      - 2.6.0-preview1
+      - 2.5.1
+      - 2.4.4
+      - 2.3.7
     env:
       - MOZ_HEADLESS=1
     addons:
@@ -16,58 +20,15 @@ matrix:
     - bash ./spec/support/setup-geckodriver.sh
     - gem install bundler -v 1.16.1
   
-  - os: linux
-    rvm: 2.5.1
-    env:
-      - MOZ_HEADLESS=1
-    addons:
-      chrome: stable
-      firefox: latest
-    before_install:
-    - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver.sh
-    - gem install bundler -v 1.16.1
-
-  - os: linux
-    rvm: 2.4.4
-    env:
-      - MOZ_HEADLESS=1
-    addons:
-      chrome: stable
-      firefox: latest
-    before_install:
-    - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver.sh
-    - gem install bundler -v 1.16.1
-
-  - os: linux
-    rvm: 2.3.7
-    env:
-      - MOZ_HEADLESS=1
-    addons:
-      chrome: stable
-      firefox: latest
-    before_install:
-    - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver.sh
-    - gem install bundler -v 1.16.1
-    
   - os: osx
-    rvm: 2.5.1
-    env:
-      - MOZ_HEADLESS=1
-    addons:
-      chrome: beta
-      firefox: latest
-      geckodriver: latest
-      chromedriver: latest
+    rvm: 
+      - 2.5.1
+      - 2.4.4
+      - 2.3.7
     before_install:
-      #- sudo bash ./spec/support/setup-chromedriver.sh
-      #- sudo bash ./spec/support/setup-geckodriver-alt.sh
       - sudo safaridriver --enable
-      - geckodriver --version
-      - chromedriver --version
       - gem install bundler -v 1.16.1
+    script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
 
   #- os: osx
   #  rvm: 2.4.4
@@ -83,19 +44,7 @@ matrix:
   #  - gem install bundler -v 1.16.1
   #  script: xvfb-run bundle exec rake
 
-  #- os: osx
-  #  rvm: 2.3.7
-  #  addons:
-  #    chrome: beta
-  #    firefox: latest
-  #  before_install:
-  #  - sudo bash ./spec/support/setup-chromedriver.sh
-  #  - sudo bash ./spec/support/setup-geckodriver-alt.sh
-  #  - sudo safaridriver --enable
-  #  - sudo chromedriver --enable
-  #  - sudo geckodriver --enable
-  #  - gem install bundler -v 1.16.1
-  #  script: xvfb-run bundle exec rake
+  #- os: linux with saucelabs to test Edge and IE
     
 notifications: 
   email: false

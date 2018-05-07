@@ -19,15 +19,23 @@ browsers.each do |browser|
                                                                      headless
                                                                      disable-gpu])
                 when :edge
-                  { platform: 'Windows 10',
-                    browserName: 'Edge',
-                    version: '16',
-                    tunnel_identifier: ENV['TRAVIS_JOB_NUMBER'] }
+                  Selenium::WebDriver::Remote::Capabilities.edge(
+                    {
+                      platform: 'Windows 10',
+                      browserName: 'Edge',
+                      version: '16',
+                      tunnel_identifier: ENV['TRAVIS_JOB_NUMBER'] 
+                    }
+                  )
                 when :internet_explorer
-                  { platform: 'Windows 10',
-                    browserName: 'internet_explorer',
-                    version: '11',
-                    tunnel_identifier: ENV['TRAVIS_JOB_NUMBER'] }
+                  Selenium::WebDriver::Remote::Capabilities.internet_explorer(
+                    {
+                      platform: 'Windows 10',
+                      browserName: 'internet_explorer',
+                      version: '11',
+                      tunnel_identifier: ENV['TRAVIS_JOB_NUMBER']
+                    }
+                  )
                 end
 
       @b ||= if ENV['SAUCELABS'] == 'true'

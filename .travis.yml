@@ -56,8 +56,8 @@ matrix:
     before_install:
     - sudo bash ./spec/support/setup-chromedriver.sh
     - sudo bash ./spec/support/setup-geckodriver-alt.sh
-    - sudo PATH=$PATH:/usr/bin/chromedriver:/usr/bin/geckodriver
     - sudo safaridriver --enable
+    - export PATH=$PATH:/usr/bin/chromedriver:/usr/bin/geckodriver
     - gem install bundler -v 1.16.1
 
   #- os: osx

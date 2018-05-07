@@ -51,7 +51,7 @@ module Watir
       hash[:summary][:time_to_last_byte] = hash[:timing][:response_end] -
         hash[:timing][:domain_lookup_start] if hash[:timing][:domain_lookup_start] > 0
       hash[:summary][:response_time] = latest_timestamp(hash) - earliest_timestamp(hash)
-      hash # Return
+      hash
     end
 
     private
@@ -59,28 +59,29 @@ module Watir
     def underscored(camel_cased_word)
       word = camel_cased_word.to_s.dup
       word.gsub!(/::/, '/')
-      word.gsub!(/([A-Z]+)([A-Z][a-z])/,'\1_\2')
-      word.gsub!(/([a-z\d])([A-Z])/,'\1_\2')
-      word.tr!("-", "_")
+      word.gsub!(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
+      word.gsub!(/([a-z\d])([A-Z])/, '\1_\2')
+      word.tr!('-', '_')
       word.downcase!
       word
     end
 
+    def timer_checks(timers, hash)
+      timers.each do |timer|
+        return hash[:timing][timer] if hash[:timing][timer] > 0
+      end
+    end
+
     def earliest_timestamp(hash)
-      return hash[:timing][:navigation_start] if hash[:timing][:navigation_start] > 0
-      return hash[:timing][:redirect_start] if hash[:timing][:redirect_start] > 0
-      return hash[:timing][:redirect_end] if hash[:timing][:redirect_end] > 0
-      return hash[:timing][:fetch_start] if hash[:timing][:fetch_start] > 0
+      timers = %i[navigation_start redirect_start redirect_end fetch_start]
+      timer_checks(timers, hash)
     end
 
     def latest_timestamp(hash)
-      return hash[:timing][:load_event_end] if hash[:timing][:load_event_end] > 0
-      return hash[:timing][:load_event_start] if hash[:timing][:load_event_start] > 0
-      return hash[:timing][:dom_complete] if hash[:timing][:dom_complete] > 0
-      return hash[:timing][:dom_content_loaded_event_end] if hash[:timing][:dom_content_loaded_event_end] > 0
-      return hash[:timing][:dom_content_loaded_event_start] if hash[:timing][:dom_content_loaded_event_start] > 0
-      return hash[:timing][:dom_interactive] if hash[:timing][:dom_interactive] > 0
-      return hash[:timing][:response_end] if hash[:timing][:response_end] > 0
+      timers = %i[load_event_end load_event_start dom_complete
+                  dom_content_loaded_event_end dom_content_loaded_event_start
+                  dom_interactive response_end]
+      timer_checks(timers, hash)
     end
   end
 

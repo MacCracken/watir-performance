@@ -39,7 +39,7 @@ browsers.each do |browser|
                 end
 
       @b ||= if ENV['SAUCELABS'] == 'true'
-               test_url = 'http://SAUCE_USERNAME:SAUCE_ACCESS_KEY@ondemand.saucelabs.com/wd/hub'
+               test_url = 'http://$SAUCE_USERNAME:$SAUCE_ACCESS_KEY@ondemand.saucelabs.com/wd/hub'
                Watir::Browser.new(browser, url: test_url, options: options)
              else
                Watir::Browser.new(browser, options: options)

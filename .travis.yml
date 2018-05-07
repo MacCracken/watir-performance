@@ -6,6 +6,8 @@ matrix:
 
   - os: linux
     rvm: 2.6.0-preview1
+    env:
+      - MOZ_HEADLESS=1
     addons:
       chrome: stable
       firefox: latest
@@ -13,10 +15,12 @@ matrix:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
     - gem install bundler -v 1.16.1
-    script: xvfb-run bundle exec rake
+    #script: xvfb-run bundle exec rake
   
   - os: linux
     rvm: 2.5.1
+    env:
+      - MOZ_HEADLESS=1
     addons:
       chrome: stable
       firefox: latest
@@ -24,10 +28,12 @@ matrix:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
     - gem install bundler -v 1.16.1
-    script: xvfb-run bundle exec rake
+    #script: xvfb-run bundle exec rake
 
   - os: linux
     rvm: 2.4.4
+    env:
+      - MOZ_HEADLESS=1
     addons:
       chrome: stable
       firefox: latest
@@ -35,10 +41,12 @@ matrix:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
     - gem install bundler -v 1.16.1
-    script: xvfb-run bundle exec rake
+    #script: xvfb-run bundle exec rake
 
   - os: linux
     rvm: 2.3.7
+    env:
+      - MOZ_HEADLESS=1
     addons:
       chrome: stable
       firefox: latest
@@ -46,7 +54,7 @@ matrix:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
     - gem install bundler -v 1.16.1
-    script: xvfb-run bundle exec rake
+    #script: xvfb-run bundle exec rake
     
   - os: osx
     rvm: 2.5.1

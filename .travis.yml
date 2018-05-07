@@ -56,7 +56,6 @@ matrix:
     rvm: 2.5.1
     env:
       - MOZ_HEADLESS=1
-      - PATH=$PATH:/opt/geckodriver:/usr/local/bin/chromedriver
     addons:
       chrome: beta
       firefox: latest

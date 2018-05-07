@@ -19,10 +19,10 @@ browsers.each do |browser|
                                                                  headless
                                                                  disable-gpu])
             when :edge
-              Selenium::WebDriver::Remote::Capabilities.edge(
-                platform: 'Windows 10', version: '17.17134',
-                device: 'Desktop', build: ENV['TRAVIS_JOB_NUMBER']
-              )
+              Selenium::WebDriver::Remote::Capabilities.edge
+              opt['platform'] = 'Windows 10'
+              opt['version'] = '17.17134'
+              opt['build'] = ENV['TRAVIS_JOB_NUMBER']
             when :internet_explorer
               Selenium::WebDriver::Remote::Capabilities.internet_explorer(
                 platform: 'Windows 10', version: '11.103',

@@ -50,15 +50,17 @@ matrix:
     
   - os: osx
     rvm: 2.5.1
+    env:
+      - MOZ_HEADLESS=1
     addons:
       chrome: beta
       firefox: latest
     before_install:
-    - sudo bash ./spec/support/setup-chromedriver.sh
-    - sudo bash ./spec/support/setup-geckodriver-alt.sh
-    - sudo safaridriver --enable
-    - export PATH=$PATH:/usr/bin/chromedriver:/usr/bin/geckodriver
-    - gem install bundler -v 1.16.1
+      - sudo bash ./spec/support/setup-chromedriver.sh
+      - sudo bash ./spec/support/setup-geckodriver-alt.sh
+      - sudo safaridriver --enable
+      - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 &"
+      - gem install bundler -v 1.16.1
 
   #- os: osx
   #  rvm: 2.4.4

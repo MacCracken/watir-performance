@@ -57,8 +57,6 @@ matrix:
     - sudo bash ./spec/support/setup-chromedriver.sh
     - sudo bash ./spec/support/setup-geckodriver-alt.sh
     - sudo safaridriver --enable
-    - sudo chromedriver --enable
-    - sudo geckodriver --enable
     - gem install bundler -v 1.16.1
 
   #- os: osx

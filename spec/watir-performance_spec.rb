@@ -9,34 +9,32 @@ browsers.each do |browser|
     let!(:b) { @b }
 
     before(:all) do
-      options = case browser
-                when :chrome
-                  Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox
-                                                                    headless
-                                                                    disable-gpu])
-                when :firefox
-                  Selenium::WebDriver::Firefox::Options.new(args: %w[no-sandbox
-                                                                     headless
-                                                                     disable-gpu])
-                when :edge
-                  Selenium::WebDriver::Remote::Capabilities.edge(
-                    platform: 'Windows 10',
-                    version: '17',
-                    build: ENV['TRAVIS_JOB_NUMBER']
-                  )
-                when :internet_explorer
-                  Selenium::WebDriver::Remote::Capabilities.internet_explorer(
-                    platform: 'Windows 10',
-                    version: '11',
-                    build: ENV['TRAVIS_JOB_NUMBER']
-                  )
-                end
+      opt = case browser
+            when :chrome
+              Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox
+                                                                headless
+                                                                disable-gpu])
+            when :firefox
+              Selenium::WebDriver::Firefox::Options.new(args: %w[no-sandbox
+                                                                 headless
+                                                                 disable-gpu])
+            when :edge
+              Selenium::WebDriver::Remote::Capabilities.edge(
+                platform: 'Windows 10', version: '17',
+                build: ENV['TRAVIS_JOB_NUMBER']
+              )
+            when :internet_explorer
+              Selenium::WebDriver::Remote::Capabilities.internet_explorer(
+                platform: 'Windows 10', version: '11',
+                build: ENV['TRAVIS_JOB_NUMBER']
+              )
+            end
 
       @b ||= if ENV['SAUCELABS'] == 'true'
                test_url = "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com/wd/hub"
-               Watir::Browser.new(browser, url: test_url, options: options)
+               Watir::Browser.new(browser, url: test_url, options: opt)
              else
-               Watir::Browser.new(browser, options: options)
+               Watir::Browser.new(browser, options: opt)
              end
     end
 

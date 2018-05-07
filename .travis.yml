@@ -84,6 +84,7 @@ matrix:
       sauce_connect: true
     before_install:
       - gem install bundler -v 1.16.1
+      - echo $SAUCELABS
 
 
 notifications: 

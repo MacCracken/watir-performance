@@ -76,6 +76,15 @@ matrix:
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
 
   #- os: linux with saucelabs to test Edge and IE
-    
+  - os: linux
+    rvm: 2.5.1
+    env:
+      - SAUCELABS=true
+    addons:
+      sauce_connect: true
+    before_install:
+      - gem install bundler -v 1.16.1
+
+
 notifications: 
   email: false

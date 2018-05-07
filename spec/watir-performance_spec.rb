@@ -1,8 +1,8 @@
-uname = `uname -s`.chomp
-browsers = %i[chrome firefox]
-if %w[MINGW CYGWIN].include? uname
-  browsers << %i[edge internet_explorer]
-end
+browsers = if ENV['SAUCELABS'] == true
+             %i[chrome firefox edge internet_explorer]
+           else
+             %i[chrome firefox]
+           end
 
 browsers.each do |browser|
   describe "WatirPerformance-#{browser.upcase}" do
@@ -19,7 +19,12 @@ browsers.each do |browser|
                                                                      headless
                                                                      disable-gpu])
                 end
-      @b ||= Watir::Browser.new(browser, options: options)
+      @b ||= if ENV['SAUCELABS'] == true
+               url = 'http://SAUCE_USERNAME:SAUCE_ACCESS_KEY@ondemand.saucelabs.com/wd/hub'
+               Watir::Browser.new(browser, test_url: url, options: options)
+             else
+               Watir::Browser.new(browser, options: options)
+             end
     end
 
     after(:all) do
@@ -34,18 +39,15 @@ browsers.each do |browser|
     it 'should get summary data from the performance metrics' do
       # Summary metrics based on Processing Model of NavigationTiming
       # http://w3c-test.org/webperf/specs/NavigationTiming/#processing-model
-      expect(b.performance.summary).to include(:app_cache)
-      expect(b.performance.summary).to include(:dns)
-      expect(b.performance.summary).to include(:tcp_connection)
-      expect(b.performance.summary).to include(:request)
-      expect(b.performance.summary).to include(:response)
-      expect(b.performance.summary).to include(:dom_processing)
+      included = %i[app_cache dns tcp_connection request response dom_processing]
+      included.each { |item| expect(b.performance.summary).to include(item) }
     end
 
     it 'should get the summary metrics such as Response Time, TTLB and TTFB' do
-      expect(b.performance.summary).to include(:time_to_first_byte) # aka "server time"
-      expect(b.performance.summary).to include(:time_to_last_byte) # aka "network + server time"
-      expect(b.performance.summary).to include(:response_time)
+      # time_to_first_byte aka "server time"
+      # time_to_last_byte aka "network + server time"
+      included = %i[time_to_first_byte time_to_last_byte response_time]
+      included.each { |item| expect(b.performance.summary).to include(item) }
     end
 
     it 'should return true for chrome supported' do
@@ -55,7 +57,7 @@ browsers.each do |browser|
 
     it 'should support performance as block' do
       b.goto 'google.com'
-      b.with_performance {|performance| expect(performance).not_to be_nil }
+      b.with_performance { |performance| expect(performance).not_to be_nil }
     end
   end
 end

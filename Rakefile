@@ -19,7 +19,7 @@ Jeweler::Tasks.new do |gem|
   gem.email = ['robert.maccracken@gmail.com', "tim.koops@gmail.com"]
   gem.authors = ['Robert MacCracken', "Tim Koopmans"]
   gem.required_rubygems_version = '~> 2.7'
-  gem.required_ruby_version = '~> 2.5'
+  gem.required_ruby_version = '~> 2.3.7'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

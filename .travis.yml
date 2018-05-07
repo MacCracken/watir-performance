@@ -3,13 +3,15 @@ language: ruby
 
 matrix:
   include:
-        
+    
   - os: osx
     rvm: 2.5.1
     addons:
       chrome: beta
-      firefox: "59.0.2"
+      firefox: latest
     before_install:
+    - sudo bash ./spec/support/setup-chromedriver.sh
+    - sudo bash ./spec/support/setup-geckodriver-alt.sh
     - sudo safaridriver --enable
     - gem install bundler -v 1.16.1
 

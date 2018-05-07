@@ -20,13 +20,13 @@ browsers.each do |browser|
                                                                  disable-gpu])
             when :edge
               Selenium::WebDriver::Remote::Capabilities.edge(
-                platform: 'Windows 10', version: '17',
-                build: ENV['TRAVIS_JOB_NUMBER']
+                platform: 'Windows 10', version: '17.17134',
+                device: 'Desktop', build: ENV['TRAVIS_JOB_NUMBER']
               )
             when :internet_explorer
               Selenium::WebDriver::Remote::Capabilities.internet_explorer(
-                platform: 'Windows 10', version: '11',
-                build: ENV['TRAVIS_JOB_NUMBER']
+                platform: 'Windows 10', version: '11.103',
+                device: 'Desktop', build: ENV['TRAVIS_JOB_NUMBER']
               )
             end
 
@@ -61,7 +61,7 @@ browsers.each do |browser|
       included.each { |item| expect(b.performance.summary).to include(item) }
     end
 
-    it 'should return true for chrome supported' do
+    it 'should return true for supported' do
       b.goto 'google.com'
       expect(b).to be_performance_supported
     end

@@ -1,4 +1,3 @@
-puts ENV['SAUCELABS'] == 'true'
 browsers = if ENV['SAUCELABS'] == 'true'
              %i[edge internet_explorer]
            else
@@ -22,16 +21,18 @@ browsers.each do |browser|
                 when :edge
                   { platform: 'Windows 10',
                     browserName: 'Edge',
-                    version: '16' }
+                    version: '16',
+                    tunnel_identifier: ENV['TRAVIS_JOB_NUMBER'] }
                 when :internet_explorer
                   { platform: 'Windows 10',
                     browserName: 'internet_explorer',
-                    version: '11' }
+                    version: '11',
+                    tunnel_identifier: ENV['TRAVIS_JOB_NUMBER'] }
                 end
 
       @b ||= if ENV['SAUCELABS'] == 'true'
                url = 'http://SAUCE_USERNAME:SAUCE_ACCESS_KEY@ondemand.saucelabs.com/wd/hub'
-               Watir::Browser.new(browser, test_url: url, desired_capabilites: options)
+               Watir::Browser.new(browser, test_url: url, options: options)
              else
                Watir::Browser.new(browser, options: options)
              end

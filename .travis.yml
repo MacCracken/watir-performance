@@ -3,6 +3,17 @@ language: ruby
 
 matrix:
   include:
+
+  - os: linux
+    rvm: 2.6.0-preview1
+    addons:
+      chrome: stable
+      firefox: "59.0.2"
+    before_install:
+    - bash ./spec/support/setup-chromedriver.sh
+    - bash ./spec/support/setup-geckodriver.sh
+    - gem install bundler -v 1.16.1
+    script: xvfb-run bundle exec rake
   
   - os: linux
     rvm: 2.5.1
@@ -17,6 +28,28 @@ matrix:
     
   - os: linux
     rvm: 2.5.0
+    addons:
+      chrome: stable
+      firefox: "59.0"
+    before_install:
+    - bash ./spec/support/setup-chromedriver.sh
+    - bash ./spec/support/setup-geckodriver.sh
+    - gem install bundler -v 1.16.1
+    script: xvfb-run bundle exec rake
+
+  - os: linux
+    rvm: 2.4.4
+    addons:
+      chrome: stable
+      firefox: "59.0"
+    before_install:
+    - bash ./spec/support/setup-chromedriver.sh
+    - bash ./spec/support/setup-geckodriver.sh
+    - gem install bundler -v 1.16.1
+    script: xvfb-run bundle exec rake
+
+  - os: linux
+    rvm: 2.3.7
     addons:
       chrome: stable
       firefox: "59.0"

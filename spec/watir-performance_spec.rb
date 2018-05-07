@@ -1,5 +1,6 @@
-browsers = if ENV['SAUCELABS'] == true
-             %i[chrome firefox edge internet_explorer]
+puts ENV['SAUCELABS'] == 'true'
+browsers = if ENV['SAUCELABS'] == 'true'
+             %i[edge internet_explorer]
            else
              %i[chrome firefox]
            end
@@ -18,10 +19,19 @@ browsers.each do |browser|
                   Selenium::WebDriver::Firefox::Options.new(args: %w[no-sandbox
                                                                      headless
                                                                      disable-gpu])
+                when :edge
+                  { platform: 'Windows 10',
+                    browserName: 'Edge',
+                    version: '16' }
+                when :internet_explorer
+                  { platform: 'Windows 10',
+                    browserName: 'internet_explorer',
+                    version: '11' }
                 end
-      @b ||= if ENV['SAUCELABS'] == true
+
+      @b ||= if ENV['SAUCELABS'] == 'true'
                url = 'http://SAUCE_USERNAME:SAUCE_ACCESS_KEY@ondemand.saucelabs.com/wd/hub'
-               Watir::Browser.new(browser, test_url: url, options: options)
+               Watir::Browser.new(browser, test_url: url, desired_capabilites: options)
              else
                Watir::Browser.new(browser, options: options)
              end

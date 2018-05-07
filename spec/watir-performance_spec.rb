@@ -24,7 +24,7 @@ browsers.each do |browser|
                       platform: 'Windows 10',
                       browserName: 'Edge',
                       version: '16',
-                      tunnel_identifier: ENV['TRAVIS_JOB_NUMBER'] 
+                      build: ENV['TRAVIS_JOB_NUMBER']
                     }
                   )
                 when :internet_explorer
@@ -33,14 +33,14 @@ browsers.each do |browser|
                       platform: 'Windows 10',
                       browserName: 'internet_explorer',
                       version: '11',
-                      tunnel_identifier: ENV['TRAVIS_JOB_NUMBER']
+                      build: ENV['TRAVIS_JOB_NUMBER']
                     }
                   )
                 end
 
       @b ||= if ENV['SAUCELABS'] == 'true'
-               url = 'http://SAUCE_USERNAME:SAUCE_ACCESS_KEY@ondemand.saucelabs.com/wd/hub'
-               Watir::Browser.new(browser, test_url: url, options: options)
+               test_url = 'http://SAUCE_USERNAME:SAUCE_ACCESS_KEY@ondemand.saucelabs.com/wd/hub'
+               Watir::Browser.new(browser, url: test_url, options: options)
              else
                Watir::Browser.new(browser, options: options)
              end

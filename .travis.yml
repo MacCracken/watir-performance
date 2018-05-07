@@ -30,7 +30,7 @@ matrix:
     rvm: 2.4.4
     addons:
       chrome: stable
-      firefox: "59.0"
+      firefox: latest
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
@@ -41,7 +41,7 @@ matrix:
     rvm: 2.3.7
     addons:
       chrome: stable
-      firefox: "59.0"
+      firefox: latest
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
@@ -64,7 +64,7 @@ matrix:
   #  rvm: 2.4.4
   #  addons:
   #    chrome: beta
-  #    firefox: "59.0"
+  #    firefox: latest
   #  before_install:
   #  - sudo bash ./spec/support/setup-chromedriver.sh
   #  - sudo bash ./spec/support/setup-geckodriver-alt.sh
@@ -78,7 +78,7 @@ matrix:
   #  rvm: 2.3.7
   #  addons:
   #    chrome: beta
-  #    firefox: "59.0"
+  #    firefox: latest
   #  before_install:
   #  - sudo bash ./spec/support/setup-chromedriver.sh
   #  - sudo bash ./spec/support/setup-geckodriver-alt.sh

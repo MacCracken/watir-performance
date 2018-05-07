@@ -60,9 +60,11 @@ matrix:
     addons:
       chrome: beta
       firefox: latest
+      geckodriver: latest
+      chromedriver: latest
     before_install:
-      - sudo bash ./spec/support/setup-chromedriver.sh
-      - sudo bash ./spec/support/setup-geckodriver-alt.sh
+      #- sudo bash ./spec/support/setup-chromedriver.sh
+      #- sudo bash ./spec/support/setup-geckodriver-alt.sh
       - sudo safaridriver --enable
       - geckodriver --version
       - chromedriver --version

@@ -6,8 +6,6 @@ matrix:
 
   - os: linux
     rvm: 2.6.0-preview1
-    env:
-      - MOZ_HEADLESS=1
     addons:
       chrome: stable
       firefox: latest

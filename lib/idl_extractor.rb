@@ -14,7 +14,7 @@ idl.each do |spec|
 end
 
 results = {}
-results[:class] = "Performance"
+results[:class] = 'Performance'
 results[:interfaces] = {}
 nodes.each do |node|
   interface_name = node.children.first.header.name.gsub("Performance","")

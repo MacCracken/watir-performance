@@ -6,7 +6,7 @@ matrix:
   # Testing all Available Ruby version from 2.3.7 - 2.6.0-preview1
   - os: linux
     rvm: 
-      - 2.6.0-preview1
+      - 2.6.0-preview2
     env:
       - MOZ_HEADLESS=1
     addons:
@@ -15,7 +15,7 @@ matrix:
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
-    - gem install bundler -v 1.16.1
+    - gem install bundler -v 1.16.2
   
   - os: linux
     rvm: 2.5.1
@@ -27,7 +27,7 @@ matrix:
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
-    - gem install bundler -v 1.16.1
+    - gem install bundler -v 1.16.2
 
   - os: linux
     rvm: 2.4.4
@@ -39,7 +39,7 @@ matrix:
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
-    - gem install bundler -v 1.16.1
+    - gem install bundler -v 1.16.2
 
   - os: linux
     rvm: 2.3.7
@@ -51,28 +51,28 @@ matrix:
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver.sh
-    - gem install bundler -v 1.16.1
+    - gem install bundler -v 1.16.2
     
   # OSX is only testing unsupported browser safari - all results should be pending
   - os: osx
     rvm: 2.5.1
     before_install:
       - sudo safaridriver --enable
-      - gem install bundler -v 1.16.1
+      - gem install bundler -v 1.16.2
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
 
   - os: osx
     rvm: 2.4.4
     before_install:
       - sudo safaridriver --enable
-      - gem install bundler -v 1.16.1
+      - gem install bundler -v 1.16.2
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
   
   - os: osx
     rvm: 2.3.7
     before_install:
       - sudo safaridriver --enable
-      - gem install bundler -v 1.16.1
+      - gem install bundler -v 1.16.2
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
 
   #- os: linux with saucelabs to test Edge and IE
@@ -83,7 +83,7 @@ matrix:
   #  addons:
   #    sauce_connect: true
   #  before_install:
-  #    - gem install bundler -v 1.16.1
+  #    - gem install bundler -v 1.16.2
   #    - echo $SAUCELABS
 
 

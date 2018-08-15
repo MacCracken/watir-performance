@@ -4,20 +4,23 @@ begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
   warn e.message
-  warn "Run `bundle install` to install missing gems"
+  warn 'Run `bundle install` to install missing gems'
   exit e.status_code
 end
 require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  gem.name = "watir-performance"
-  gem.homepage = "http://github.com/MacCracken/watir-performance"
-  gem.license = "MIT"
-  gem.summary = %Q{A simple helper gem for watir performance metrics}
-  gem.description = %Q{This gem collects and summarises metrics speficied in the W3C Navigation web performance specifications at http://w3c-test.org/webperf/specs/NavigationTiming/ when using watir and a compatible browser}
-  gem.email = ['robert.maccracken@gmail.com', "tim.koops@gmail.com"]
-  gem.authors = ['Robert MacCracken', "Tim Koopmans"]
+  gem.name = 'watir-performance'
+  gem.homepage = 'http://github.com/MacCracken/watir-performance'
+  gem.license = 'MIT'
+  gem.summary = 'A simple helper gem for watir performance metrics'
+  gem.description = 'This gem collects and summarises metrics speficied ' \
+                    'in the W3C Navigation web performance specifications ' \
+                    'at http://w3c-test.org/webperf/specs/NavigationTiming/ ' \
+                    'when using watir and a compatible browser'
+  gem.email = ['robert.maccracken@gmail.com', 'tim.koops@gmail.com']
+  gem.authors = ['Robert MacCracken', 'Tim Koopmans']
   gem.required_rubygems_version = '~> 2.7'
   gem.required_ruby_version = '>= 2.3.7'
 end
@@ -38,7 +41,7 @@ task default: :spec
 
 require 'rdoc/task'
 RDoc::Task.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+  version = File.exist?('VERSION') ? File.read('VERSION') : ''
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "watir-performance #{version}"

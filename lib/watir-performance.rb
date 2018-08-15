@@ -28,10 +28,9 @@ module Watir
 
     def summarized_hash(hash)
       hash[:summary] = {}
-      hash[:summary][:redirect] = hash[:timing][:redirect_end] -
-        hash[:timing][:redirect_start] if hash[:timing][:redirect_end] > 0
-      hash[:summary][:app_cache] = hash[:timing][:domain_lookup_start] -
-        hash[:timing][:fetch_start] if hash[:timing][:fetch_start] > 0
+      timing = hash[:timing]
+      hash[:summary][:redirect] = redirect_timer(timing)
+      hash[:summary][:app_cache] = app_cache(timing)
       hash[:summary][:dns] = hash[:timing][:domain_lookup_end] -
         hash[:timing][:domain_lookup_start] if hash[:timing][:domain_lookup_start] > 0
       hash[:summary][:tcp_connection] = hash[:timing][:connect_end] -
@@ -70,6 +69,23 @@ module Watir
       timers.each do |timer|
         return hash[:timing][timer] if hash[:timing][timer] > 0
       end
+    end
+
+    def timer_summerize(t_start, t_end, standard, hash)
+      case standard
+      when true
+        hash[t_end] - hash[t_start] if hash[t_end] > 0
+      else
+        hash[t_end] - hash[t_start] if hash[t_start] > 0
+      end
+    end
+
+    def redirect_timer(hash)
+      hash[:redirect_end] - hash[:redirect_start] if hash[:redirect_end] > 0
+    end
+
+    def app_cache(hash)
+      hash[:domain_lookup_start] - hash[:fetch_start] if hash[:fetch_start] > 0
     end
 
     def earliest_timestamp(hash)

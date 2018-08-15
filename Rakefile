@@ -7,8 +7,8 @@ rescue Bundler::BundlerError => e
   warn 'Run `bundle install` to install missing gems'
   exit e.status_code
 end
-require 'rake'
 
+require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   gem.name = 'watir-performance'
@@ -42,7 +42,6 @@ task default: :spec
 require 'rdoc/task'
 RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ''
-
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "watir-performance #{version}"
   rdoc.rdoc_files.include('README*')

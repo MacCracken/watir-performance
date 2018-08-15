@@ -45,7 +45,7 @@ open(File.expand_path(File.dirname(__FILE__)) +
     f.puts ' ' * 4 + 'attr_reader ' +
       results[:interfaces][interface_name][:attrs].collect! {|x| ":"+x}.join(", ")
     f.puts <<-'eos'
-    def initialize args
+    def initialize(args)
       args.each do |k,v|
         instance_variable_set("@#{k}", v) if respond_to?(k.to_sym) unless v.nil?
       end

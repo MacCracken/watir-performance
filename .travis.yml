@@ -14,7 +14,7 @@ matrix:
       firefox: latest
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver.sh
+    - bash ./spec/support/setup-geckodriver-alt.sh
     - gem install bundler -v 1.17.1
   
   - os: linux
@@ -26,7 +26,7 @@ matrix:
       firefox: latest
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver.sh
+    - bash ./spec/support/setup-geckodriver-alt.sh
     - gem install bundler -v 1.17.1
   
   - os: linux
@@ -38,7 +38,7 @@ matrix:
       firefox: latest
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver.sh
+    - bash ./spec/support/setup-geckodriver-alt.sh
     - gem install bundler -v 1.17.1
     
   - os: linux
@@ -50,7 +50,7 @@ matrix:
       firefox: latest
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver.sh
+    - bash ./spec/support/setup-geckodriver-alt.sh
     - gem install bundler -v 1.17.1
 
   - os: linux
@@ -62,7 +62,7 @@ matrix:
       firefox: latest
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver.sh
+    - bash ./spec/support/setup-geckodriver-alt.sh
     - gem install bundler -v 1.17.1
     
   # OSX is only testing unsupported browser safari - all results should be pending

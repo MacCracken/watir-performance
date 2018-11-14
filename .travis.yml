@@ -84,14 +84,14 @@ matrix:
     rvm: 2.4.5
     before_install:
       - sudo safaridriver --enable
-      - gem install bundler -v 1.16.2
+      - gem install bundler -v 1.17.1
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
   
   - os: osx
     rvm: 2.3.8
     before_install:
       - sudo safaridriver --enable
-      - gem install bundler -v 1.16.2
+      - gem install bundler -v 1.17.1
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
 
   #- os: linux with saucelabs to test Edge and IE

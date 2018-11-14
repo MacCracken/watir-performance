@@ -3,10 +3,10 @@ language: ruby
 
 matrix:
   include:
-  # Testing all Available Ruby version from 2.3.7 - 2.6.0-preview1
+  # Testing all Available Ruby version from 2.3.7 - 2.6.0-preview2
   - os: linux
     rvm: 
-      - 2.6.0-preview3
+      - 2.6.0-preview2
     env:
       - MOZ_HEADLESS=1
     addons:

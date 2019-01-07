@@ -14,7 +14,8 @@ matrix:
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver-alt.sh
-    - gem install bundler -v 2.0.1
+    - gem update --system
+    - gem install bundler
   
   - os: linux
     rvm: 2.5.3
@@ -26,7 +27,8 @@ matrix:
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver-alt.sh
-    - gem install bundler -v 1.17.1
+    - gem update --system
+    - gem install bundler
   
   - os: linux
     rvm: 2.4.5
@@ -38,7 +40,8 @@ matrix:
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver-alt.sh
-    - gem install bundler -v 1.17.1
+    - gem update --system
+    - gem install bundler
 
   - os: linux
     rvm: 2.3.8
@@ -50,35 +53,40 @@ matrix:
     before_install:
     - bash ./spec/support/setup-chromedriver.sh
     - bash ./spec/support/setup-geckodriver-alt.sh
-    - gem install bundler -v 1.17.1
+    - gem update --system
+    - gem install bundler
     
   # OSX is only testing unsupported browser safari - all results should be pending
   - os: osx
     rvm: 2.6.0
     before_install:
       - sudo safaridriver --enable
-      - gem install bundler -v 2.0.1
+      - gem update --system
+      - gem install bundler
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
 
   - os: osx
     rvm: 2.5.3
     before_install:
       - sudo safaridriver --enable
-      - gem install bundler -v 1.17.1
+      - gem update --system
+      - gem install bundler
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
     
   - os: osx
     rvm: 2.4.5
     before_install:
       - sudo safaridriver --enable
-      - gem install bundler -v 1.17.1
+      - gem update --system
+      - gem install bundler
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
   
   - os: osx
     rvm: 2.3.8
     before_install:
       - sudo safaridriver --enable
-      - gem install bundler -v 1.17.1
+      - gem update --system
+      - gem install bundler
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
 
   #- os: linux with saucelabs to test Edge and IE

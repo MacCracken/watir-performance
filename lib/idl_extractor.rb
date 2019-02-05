@@ -4,6 +4,7 @@ require 'zomg'
 require 'activesupport'
 
 doc = Nokogiri::HTML(open('http://w3c-test.org/webperf/specs/NavigationTiming/'))
+# https://w3c-test.org/navigation-timing/
 idl = []
 doc.css('pre.idl').each do |content|
   idl << content.text

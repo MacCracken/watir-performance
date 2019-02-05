@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
     "lib/idl_extractor.rb",
     "lib/performance.rb",
     "lib/watir-performance.rb",
+    "lib/performance-reader.rb",
     "spec/spec_helper.rb",
     "spec/support/setup-chromedriver.sh",
     "spec/support/setup-geckodriver-alt.sh",

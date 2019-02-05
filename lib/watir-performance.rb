@@ -121,6 +121,7 @@ module Watir
                driver.execute_script(PERFORMS)
              end
       raise ERRORMESSAGE if data.nil?
+
       PerformanceHelper.new(data).munge
     end
 

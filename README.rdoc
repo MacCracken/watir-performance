@@ -79,7 +79,7 @@ web performance specification.
 
 == Copyright
 
-Copyright (c) 2018 Robert MacCracken, 2011 Tim Koopmans
+Copyright (c) 2019 Robert MacCracken, 2011 Tim Koopmans
 
 See LICENSE.txt for further details.
 

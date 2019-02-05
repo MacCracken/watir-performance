@@ -31,7 +31,6 @@ Gem::Specification.new do |s|
     "VERSION",
     "examples/basic.rb",
     "lib/idl_extractor.rb",
-    "lib/performance-reader.rb",
     "lib/performance.rb",
     "lib/watir-performance.rb",
     "spec/spec_helper.rb",

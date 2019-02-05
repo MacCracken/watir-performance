@@ -1,6 +1,6 @@
 module Watir
   # Something for now
-  class PerformanceReader
+  class PerformanceDisplayed
     ## Only send Browser Object Through
     def self.response_time(browser)
       no_safari = 'No Safari Performance Support'

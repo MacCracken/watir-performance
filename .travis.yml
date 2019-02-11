@@ -3,9 +3,9 @@ language: ruby
 
 matrix:
   include:
-  # Testing all Available Ruby version from 2.3.8 - 2.6.0
+  # Testing all Available Ruby version from 2.3.8 - 2.6.1
   - os: linux
-    rvm: 2.6.0
+    rvm: 2.6.1
     env:
       - MOZ_HEADLESS=1
     addons:
@@ -58,7 +58,7 @@ matrix:
     
   # OSX is only testing unsupported browser safari - all results should be pending
   - os: osx
-    rvm: 2.6.0
+    rvm: 2.6.1
     before_install:
       - sudo safaridriver --enable
       - gem update --system

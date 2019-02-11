@@ -12,8 +12,6 @@ matrix:
       chrome: stable
       firefox: latest
     before_install:
-    - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver-alt.sh
     - gem update --system
     - gem install bundler
   
@@ -25,8 +23,6 @@ matrix:
       chrome: stable
       firefox: latest
     before_install:
-    - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver-alt.sh
     - gem update --system
     - gem install bundler
   
@@ -38,8 +34,6 @@ matrix:
       chrome: stable
       firefox: latest
     before_install:
-    - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver-alt.sh
     - gem update --system
     - gem install bundler
 
@@ -51,8 +45,6 @@ matrix:
       chrome: stable
       firefox: latest
     before_install:
-    - bash ./spec/support/setup-chromedriver.sh
-    - bash ./spec/support/setup-geckodriver-alt.sh
     - gem update --system
     - gem install bundler
     

@@ -3,8 +3,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'rspec'
 require 'watir-performance'
 require 'watir'
-
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
+require 'webdrivers'
 
 RSpec.configure do |config|
 end

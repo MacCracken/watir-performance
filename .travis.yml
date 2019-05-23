@@ -47,17 +47,6 @@ matrix:
     before_install:
     - gem update --system
     - gem install bundler
-
-  - os: linux
-    rvm: 2.2.0
-    env:
-      - MOZ_HEADLESS=1
-    addons:
-      chrome: stable
-      firefox: latest
-    before_install:
-    - gem update --system
-    - gem install bundler
     
   # OSX is only testing unsupported browser safari - all results should be pending
   - os: osx
@@ -86,14 +75,6 @@ matrix:
   
   - os: osx
     rvm: 2.3.0
-    before_install:
-      - sudo safaridriver --enable
-      - gem update --system
-      - gem install bundler
-    script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
-
-  - os: osx
-    rvm: 2.2.0
     before_install:
       - sudo safaridriver --enable
       - gem update --system

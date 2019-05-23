@@ -5,7 +5,7 @@ matrix:
   include:
   # Testing all Available Ruby version from 2.3.8 - 2.6.1
   - os: linux
-    rvm: 2.6.1
+    rvm: 2.6.3
     env:
       - MOZ_HEADLESS=1
     addons:
@@ -16,7 +16,7 @@ matrix:
     - gem install bundler
   
   - os: linux
-    rvm: 2.5.3
+    rvm: 2.5.5
     env:
       - MOZ_HEADLESS=1
     addons:
@@ -27,7 +27,7 @@ matrix:
     - gem install bundler
   
   - os: linux
-    rvm: 2.4.5
+    rvm: 2.4.6
     env:
       - MOZ_HEADLESS=1
     addons:
@@ -38,7 +38,7 @@ matrix:
     - gem install bundler
 
   - os: linux
-    rvm: 2.3
+    rvm: 2.3.0
     env:
       - MOZ_HEADLESS=1
     addons:
@@ -49,7 +49,7 @@ matrix:
     - gem install bundler
 
   - os: linux
-    rvm: 2.2
+    rvm: 2.2.0
     env:
       - MOZ_HEADLESS=1
     addons:
@@ -61,7 +61,7 @@ matrix:
     
   # OSX is only testing unsupported browser safari - all results should be pending
   - os: osx
-    rvm: 2.6.1
+    rvm: 2.6.3
     before_install:
       - sudo safaridriver --enable
       - gem update --system
@@ -69,7 +69,7 @@ matrix:
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
 
   - os: osx
-    rvm: 2.5.3
+    rvm: 2.5.5
     before_install:
       - sudo safaridriver --enable
       - gem update --system
@@ -77,7 +77,7 @@ matrix:
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
     
   - os: osx
-    rvm: 2.4.5
+    rvm: 2.4.6
     before_install:
       - sudo safaridriver --enable
       - gem update --system
@@ -85,7 +85,7 @@ matrix:
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
   
   - os: osx
-    rvm: 2.3
+    rvm: 2.3.0
     before_install:
       - sudo safaridriver --enable
       - gem update --system
@@ -93,7 +93,7 @@ matrix:
     script: bundle exec rake spec SPEC=spec/watir-performance-non-supported-browser_spec.rb
 
   - os: osx
-    rvm: 2.2
+    rvm: 2.2.0
     before_install:
       - sudo safaridriver --enable
       - gem update --system

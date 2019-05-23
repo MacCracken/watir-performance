@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/MacCracken/watir-performance".freeze
   s.licenses = ["MIT".freeze]
-  s.required_ruby_version = Gem::Requirement.new(">= 2.0.0".freeze)
+  s.required_ruby_version = Gem::Requirement.new(">= 2.2.0".freeze)
   s.rubygems_version = "3.0.3".freeze
   s.summary = "A simple helper gem for watir performance metrics".freeze
 

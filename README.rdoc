@@ -2,7 +2,6 @@
 
 {<img src="https://badge.fury.io/rb/watir-performance.svg" alt="Gem Version" />}[https://badge.fury.io/rb/watir-performance]
 {<img src="https://api.codeclimate.com/v1/badges/ce9c9de5e6146dedab27/maintainability" />}[https://codeclimate.com/github/MacCracken/watir-performance/maintainability]
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fc700f21a3f446fc8f3b3c2aca400430)](https://www.codacy.com/manual/MacCracken/watir-performance?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MacCracken/watir-performance&amp;utm_campaign=Badge_Grade)
 {<img src="https://travis-ci.org/MacCracken/watir-performance.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/MacCracken/watir-performance]
 
 Successor to 90kts:watir-webdriver-performance[https://github.com/90kts/watir-webdriver-performance] for Watir as opposed to watir-webdriver.

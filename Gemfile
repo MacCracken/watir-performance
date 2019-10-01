@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'watir', '~> 6.16'
-gem 'webdrivers', '~> 3.0'
+gem 'webdrivers', '~> 4.0'
 
 group :development do
   gem "rdoc", "~> 6.0"

@@ -19,3 +19,6 @@ chromedriver.log
 
 # RubyMine
 .idea
+
+# Gem
+*.gem
